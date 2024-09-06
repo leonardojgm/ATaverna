@@ -61,6 +61,13 @@ h1 {
     font-size: 1.5rem;
 }
 
+/* Estiliza os botões dentro das seções */
+#playPauseButton:hover {
+    background-color: var(--cor-principal); /* Muda a cor de fundo ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
+    color: var(--cor-texto-secundaria); /* Cor do texto do botão */
+}
+
 /* Estiliza as seções da página */
 section {
     display: flex; /* Usa Flexbox para layout */

@@ -10,7 +10,7 @@ let historia = "";
 playPauseButton.addEventListener("click", () => {
   if (audio.paused) {
       audio.play();
-
+      
       playPauseButton.innerHTML = '<i class="fa-solid fa-pause"></i>';
   } else {
       audio.pause();
