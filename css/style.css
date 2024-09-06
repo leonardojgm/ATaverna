@@ -31,7 +31,7 @@ body {
 }
 
 .centro {
-    margin-top: 40vh;
+    margin-top: 30vh;
 }
 
 a {
@@ -92,7 +92,7 @@ section button:hover {
 .resultados-pesquisa {
     width: 50vw; /* Largura máxima da caixa de resultados */
     height: 64vh; /* Altura máxima da caixa de resultados */
-    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    overflow-y: scroll; /* Adiciona rolagem vertical se necessário */
     border-radius: 0.6rem; /* Borda arredondada */
     padding-right: 15px;
 }
@@ -142,6 +142,11 @@ section button:hover {
 /* Estiliza os links quando são passados o mouse sobre */
 .item-resultado a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+#acoes {
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .foto {
@@ -222,8 +227,8 @@ footer {
 
 #loader {
   display: none;
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid var(--cor-fundo-claro-secundaria);
+  border-top: 16px solid var(--cor-texto-principal);
   border-radius: 50%;
   width: 120px;
   height: 120px;
