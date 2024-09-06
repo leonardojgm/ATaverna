@@ -3,11 +3,25 @@ const resultadosPesquisa = document.getElementById('resultados-pesquisa');
 const campoPesquisa = document.getElementById('campo-pesquisa');
 const botaoPesquisa = document.getElementById('botao-pesquisa');
 const acoes = document.getElementById('acoes');
+const audio = document.getElementById("myAudio");
+const playPauseButton = document.getElementById("playPauseButton");
 let historia = "";
+
+playPauseButton.addEventListener("click", () => {
+  if (audio.paused) {
+      audio.play();
+
+      playPauseButton.innerHTML = '<i class="fa-solid fa-pause"></i>';
+  } else {
+      audio.pause();
+
+      playPauseButton.innerHTML = '<i class="fa-solid fa-play"></i>';
+  }
+ });
 
 campoPesquisa.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
-    exibirPassoAPasso();
+    criarAventura();
   }
 });
 
@@ -36,12 +50,14 @@ async function avancarAventura(resposta) {
 async function criarHistoria() {
   // Construindo o prompt
   let prompt = `
-    A resposta tem que vir formatada para HTML.
     Você é o mestre de uma aventura de RPG, a aventura começa assim:
     ${campoPesquisa.value}.
     Você precisa pegar essa narrativa e introduzir a história.
     O ponto de partida da aventura sempre é a Taverna, mas a palavra Taverna não pode ser usada no título.
     A aventura deve possuir um objetivo claro na introdução.
+    A resposta tem que vir formatada para HTML.
+    Não utilize Markdown.
+    Pode usar emoticons.
     Na sequencia exiba 4 opções usando tag <table></table> para tomada de decisão do jogador, exemplo:
     <table>
       <tbody>
@@ -75,6 +91,9 @@ async function avancarHistoria(resposta) {
     Continue a história do ponto onde parou: 
     "${historia}".
     O usuario escolheu a opção ${resposta}.
+    A resposta tem que vir formatada para HTML.
+    Não utilize Markdown.
+    Pode usar emoticons.
     Você deve incluir no final do texto a frase "FIM DE JOGO" caso o jogador tenha chegado a uma das situações:
     1. Morreu
     2. Concluiu seu objetivo principal

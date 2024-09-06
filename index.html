@@ -9,15 +9,20 @@
     <title>A Taverna</title>
   </head>
   <body>
-    <header>
-      <h1>A Taverna</h1>
+    <header></header>
+      <audio id="myAudio" src="audio/som.mp3" autoplay></audio>
+      <h1>A Taverna
+        <button id="playPauseButton" title="Tocar ou pausar o som de fundo">
+          <i class="fa-solid fa-pause"></i>
+        </button>
+      </h1>
     </header>
     <main id="main" class="centro">
       <section>
         <div id="loader"></div>
       </section>
       <section>
-        <input type="text" placeholder="Me conte o ínicio de sua aventura!" id="campo-pesquisa">
+        <input type="text-area" placeholder="Conte o ínicio da aventura! Ex.: Orcs atacam!" id="campo-pesquisa">
         <button id="botao-pesquisa">Começar!</button>
       </section>
       <section id="resultados-pesquisa" class="resultados-pesquisa">

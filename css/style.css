@@ -50,6 +50,17 @@ h1 {
     letter-spacing: 0.4rem; /* Espaçamento entre letras */
 }
 
+#playPauseButton {
+    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 1.5rem; /* Borda arredondada */
+    background-color: var(--cor-secundaria); /* Cor de fundo do botão */
+    color: var(--cor-fundo-claro-principal); /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1.5rem;
+}
+
 /* Estiliza as seções da página */
 section {
     display: flex; /* Usa Flexbox para layout */
@@ -79,6 +90,7 @@ section button {
     color: var(--cor-fundo-claro-principal); /* Cor do texto do botão */
     font-size: 1rem; /* Tamanho da fonte */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1.5rem;
 }
 
 /* Adiciona efeito hover ao botão de pesquisa */
@@ -90,7 +102,7 @@ section button:hover {
 
 /* Estiliza a caixa de resultados da pesquisa */
 .resultados-pesquisa {
-    width: 50vw; /* Largura máxima da caixa de resultados */
+    width: 90vw; /* Largura máxima da caixa de resultados */
     height: 64vh; /* Altura máxima da caixa de resultados */
     overflow-y: auto; /* Adiciona rolagem vertical se necessário */
     border-radius: 0.6rem; /* Borda arredondada */
@@ -109,6 +121,7 @@ section button:hover {
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 1.5rem;
 }
 
 /* Estiliza os títulos dentro dos itens de resultado */
@@ -242,13 +255,13 @@ footer {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Tamanho da fonte em telas menores */
+        font-size: 1.5rem; /* Tamanho da fonte em telas menores */
         letter-spacing: 0.2rem; /* Espaçamento entre letras em telas menores */
     }
 
     section input {
-        width: 25rem; /* Largura dos inputs em telas menores */
-        padding: 0.8rem; /* Espaçamento interno em telas menores */
+        width: 90vw; /* Largura dos inputs em telas menores */
+        padding: 1rem; /* Espaçamento interno em telas menores */
     }
 
     .resultados-pesquisa {
@@ -258,7 +271,7 @@ footer {
     }
 
     .item-resultado h2 {
-        font-size: 1.3rem; /* Tamanho da fonte dos títulos em telas menores */
+        font-size: 1rem; /* Tamanho da fonte dos títulos em telas menores */
     }
 
     .item-resultado h3 {
@@ -270,27 +283,22 @@ footer {
 @media (max-width: 480px) {
 
     h1 {
-        font-size: 1.8rem; /* Tamanho da fonte em telas pequenas */
-        letter-spacing: 0.1rem; /* Espaçamento entre letras em telas pequenas */
-    }
-
-    section input {
-        width: 17rem; /* Largura total dos inputs em telas pequenas */
+        font-size: 1.5rem; /* Tamanho da fonte em telas pequenas */
     }
 
     section button {
         padding: 0.6rem 1rem; /* Espaçamento interno do botão em telas pequenas */
-        font-size: 0.9rem; /* Tamanho da fonte do botão em telas pequenas */
+        font-size: 2rem; /* Tamanho da fonte do botão em telas pequenas */
     }
 
     .resultados-pesquisa {
-        width: 100vw; /* Largura da caixa de resultados em telas pequenas */
+        width: 90vw; /* Largura da caixa de resultados em telas pequenas */
         height: 56vh; /* Altura da caixa de resultados em telas pequenas */
         padding-right: 0;
     }
 
     .item-resultado h2 {
-        font-size: 1.1rem; /* Tamanho da fonte dos títulos em telas pequenas */
+        font-size: 1rem; /* Tamanho da fonte dos títulos em telas pequenas */
     }
 
     .item-resultado h3 {
@@ -298,6 +306,6 @@ footer {
     }
 
     footer {
-        font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
+        font-size: 1rem; /* Tamanho da fonte do rodapé em telas pequenas */
     }
 }
