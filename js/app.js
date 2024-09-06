@@ -126,7 +126,7 @@ async function consultarGemini(body) {
 
     const resposta = await response.json();
 
-    if (!resposta || !resposta.length || resposta.length === 0 || resposta === "") {
+    if (!resposta || resposta === "undefined" || resposta.length === 0 || resposta === "" || resposta === " ") {
       throw new Error('Resposta vazia');
     }
 
