@@ -55,6 +55,10 @@ async function exibirPassoAPasso() {
     </div>`;
 
     itemResultado.classList.add('item-resultado');
+
+    document.getElementById('main').classList.remove('centro');
+    
+    campoPesquisa.style.display = 'none';
   
     resultadosPesquisa.appendChild(itemResultado);
 

@@ -30,6 +30,10 @@ body {
     overflow: hidden; /* Remove o barra de rolagem */
 }
 
+.centro {
+    margin-top: 40vh;
+}
+
 a {
     text-decoration: none;
 }
