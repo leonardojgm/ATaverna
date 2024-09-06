@@ -92,7 +92,7 @@ section button:hover {
 .resultados-pesquisa {
     width: 50vw; /* Largura máxima da caixa de resultados */
     height: 64vh; /* Altura máxima da caixa de resultados */
-    overflow-y: scroll; /* Adiciona rolagem vertical se necessário */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
     border-radius: 0.6rem; /* Borda arredondada */
     padding-right: 15px;
 }
