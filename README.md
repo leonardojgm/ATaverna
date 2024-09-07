@@ -1,6 +1,8 @@
 # ATaverna
 Um simulador de aventuras narrativas dinâmicas e supreendentes
 
+Vote na Imersão da Alura + Gemini: https://discord.com/channels/1277631721822748742/1277631722716008535/1281576355170881608
+
 ![image](https://github.com/user-attachments/assets/07aea0a8-b0f1-4bee-b946-c56a3e7b9d78)
 
 Demo disponível em: https://ataverna.vercel.app/
