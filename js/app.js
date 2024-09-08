@@ -1,39 +1,134 @@
 
-const resultadosPesquisa = document.getElementById('resultados-pesquisa');
+const resultadosPesquisa = document.getElementById("resultados-pesquisa");
+const campoNovaHistoria = document.getElementById("campo-nova-historia");
+const botaoNovaHistoria = document.getElementById("botao-nova-historia");
+const acoes = document.getElementById("acoes");
+const audio = document.getElementById("meu-audio");
+const playPauseButton = document.getElementById("botao-play-pause");
+const novoButton = document.getElementById("botao-criar");
+const usarButton = document.getElementById("botao-usar");
 const campoPesquisa = document.getElementById('campo-pesquisa');
-const botaoPesquisa = document.getElementById('botao-pesquisa');
-const acoes = document.getElementById('acoes');
-const audio = document.getElementById("myAudio");
-const playPauseButton = document.getElementById("playPauseButton");
 let historia = "";
+
+novoButton.addEventListener("click", () => {      
+  novoButton.style.display = 'none';
+  usarButton.style.display = 'none';
+  campoNovaHistoria.style.display = 'block';
+  botaoNovaHistoria.style.display = 'block';
+});
+
+usarButton.addEventListener("click", () => {      
+  novoButton.style.display = 'none';
+  usarButton.style.display = 'none';
+  campoPesquisa.style.display = 'block';
+});
+
+campoPesquisa.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    pesquisar();
+  }
+});
+
+campoPesquisa.addEventListener('input', () => {
+  pesquisar();
+});
+
+function pesquisar() {  
+  const termoMinusculo = campoPesquisa.value.toLowerCase();
+  
+  document.getElementById('main').classList.remove('centro');
+
+  // Inicializa uma string vazia para armazenar os resultados HTML
+  let resultados = "";
+  let prompt = "";
+  let inicio = "";
+
+  // Itera sobre cada dado e constrói o HTML para cada resultado
+  for (let dado of dados) {
+    prompt = dado.prompt.toLowerCase();
+    inicio = dado.inicio.toLowerCase();
+
+    // Se titulo ou inicio inclui termoMinusculo
+    if (prompt.includes(termoMinusculo) || inicio.includes(termoMinusculo)) {
+      resultados +=`
+        <div class="item-resultado">
+          <img src="img/${dado.foto}" class="foto" alt="${dado.prompt}" />
+          <div class="info">
+            <div class="info-meta">
+              <div class="info-meta-titulo">
+                <h2>${dado.prompt} </h2>
+              </div>
+              <button class="botao-comecar-pre-criado" title="Começar">
+                <label>Começar</label>
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+            <div class="descricao-meta">${dado.inicio}</div>
+          </div>
+        </div>`;
+    }
+  };  
+
+  if (!resultados) {
+    resultados =`<p>Nada foi encontrado</p>`
+  }
+
+  resultadosPesquisa.innerHTML = "";
+
+  exibirItens(resultados);
+  prepararBotaoComecarPreCriado();
+}
+
+function exibirItens(resultados) {
+  const itemResultado = document.createElement('div');
+  
+  itemResultado.innerHTML = resultados;
+  
+  resultadosPesquisa.appendChild(itemResultado);
+}
+
+function prepararBotaoComecarPreCriado() {
+  const botaoComecarPreCriado = document.querySelectorAll('.botao-comecar-pre-criado');
+
+  botaoComecarPreCriado.forEach(botao => {
+    botao.addEventListener('click', async () => {
+      const prompt = botao.parentElement.querySelector('h2').textContent.trim(); 
+      const texto = dados.find(x => x.prompt.includes(prompt)).inicio;
+
+      campoPesquisa.style.display = 'none';
+
+      await atualizarResultado(texto);
+    });
+  });
+}
 
 playPauseButton.addEventListener("click", () => {
   if (audio.paused) {
       audio.play();
-      
+
       playPauseButton.innerHTML = '<i class="fa-solid fa-pause"></i>';
   } else {
       audio.pause();
 
       playPauseButton.innerHTML = '<i class="fa-solid fa-play"></i>';
   }
- });
+});
 
-campoPesquisa.addEventListener('keydown', (event) => {
+campoNovaHistoria.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     criarAventura();
   }
 });
 
-botaoPesquisa.addEventListener('click', () => {
+botaoNovaHistoria.addEventListener('click', () => {
   criarAventura();
 });
 
 async function criarAventura() {
   document.getElementById('loader').style.display = 'block';
 
-  campoPesquisa.remove();
-  botaoPesquisa.remove();
+  campoNovaHistoria.remove();
+  botaoNovaHistoria.remove();
 
   await criarHistoria();
 }
@@ -51,7 +146,7 @@ async function criarHistoria() {
   // Construindo o prompt
   let prompt = `
     Você é o mestre de uma aventura de RPG, a aventura começa assim:
-    ${campoPesquisa.value}.
+    ${campoNovaHistoria.value}.
     Você precisa pegar essa narrativa e introduzir a história.
     O ponto de partida da aventura sempre é a Taverna, mas a palavra Taverna não pode ser usada no título.
     A aventura deve possuir um objetivo claro na introdução.
@@ -174,6 +269,8 @@ async function atualizarResultado(texto) {
 
   itemResultado.classList.add('item-resultado');
 
+  resultadosPesquisa.innerHTML = "";
+
   resultadosPesquisa.appendChild(itemResultado);
 
   if (!texto.includes("FIM DE JOGO")) {
@@ -189,6 +286,7 @@ async function exibirBotoesOpcoes() {
 
   buttonA.id = 'button-a';
   buttonA.innerHTML = 'A';
+  buttonA.classList.add('botao-acao');
   buttonA.addEventListener('click', function() { 
     avancarAventura(`A`);
   });
@@ -199,6 +297,7 @@ async function exibirBotoesOpcoes() {
 
   buttonB.id = 'button-b';
   buttonB.innerHTML = 'B';
+  buttonB.classList.add('botao-acao');
   buttonB.addEventListener('click', function() { 
     avancarAventura(`B`);
   });
@@ -209,6 +308,7 @@ async function exibirBotoesOpcoes() {
 
   buttonC.id = 'button-c';
   buttonC.innerHTML = 'C';
+  buttonC.classList.add('botao-acao');
   buttonC.addEventListener('click', function() { 
     avancarAventura(`C`);
   });
@@ -218,7 +318,8 @@ async function exibirBotoesOpcoes() {
   const buttonD = document.createElement('button');
 
   buttonD.id = 'button-d';
-  buttonD.innerHTML = 'D';
+  buttonD.innerHTML = '<b>D</b>';
+  buttonD.classList.add('botao-acao');
   buttonD.addEventListener('click', function() { 
     avancarAventura(`D`);
   });

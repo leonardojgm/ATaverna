@@ -9,6 +9,7 @@
     --cor-texto-terciaria: #000000;
     --cor-fundo-claro-principal: #c4b815;
     --cor-fundo-claro-secundaria: #000000;
+    --cor-fundo-claro-terciaria: #fff;
     --cor-fundo-escuro: #000000;
     --cor-acento: #e5e5e5;
 }
@@ -50,7 +51,7 @@ h1 {
     letter-spacing: 0.4rem; /* Espaçamento entre letras */
 }
 
-#playPauseButton {
+#botao-play-pause {
     padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
     border: none; /* Remove a borda padrão */
     border-radius: 1.5rem; /* Borda arredondada */
@@ -61,12 +62,25 @@ h1 {
     font-size: 1.5rem;
 }
 
-/* Estiliza os botões dentro das seções */
-#playPauseButton:hover {
-    background-color: var(--cor-principal); /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
-    color: var(--cor-texto-secundaria); /* Cor do texto do botão */
+    #botao-play-pause:hover {
+        background-color: var(--cor-principal); /* Muda a cor de fundo ao passar o mouse */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
+        color: var(--cor-texto-secundaria); /* Cor do texto do botão */
+    }
+
+#campo-nova-historia, #botao-nova-historia, #campo-pesquisa {
+    display: none;
 }
+
+#botao-criar, #botao-usar, #botao-nova-historia, .botao-acao{
+    background-color: var(--cor-fundo-claro-secundaria); /* Cor de fundo do botão */
+    color: var(--cor-fundo-claro-principal); /* Cor do texto do botão */
+}
+
+    #botao-criar:hover, #botao-usar:hover, #botao-nova-historia:hover, .botao-acao:hover {
+        background-color: var(--cor-fundo-claro-principal); /* Cor de fundo do botão */
+        color: var(--cor-fundo-claro-secundaria); /* Cor do texto do botão */
+    }
 
 /* Estiliza as seções da página */
 section {
@@ -93,18 +107,26 @@ section button {
     padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
     border: none; /* Remove a borda padrão */
     border-radius: 1.5rem; /* Borda arredondada */
-    background-color: var(--cor-secundaria); /* Cor de fundo do botão */
-    color: var(--cor-fundo-claro-principal); /* Cor do texto do botão */
+    background-color: var(--cor-fundo-claro-principal); /* Cor de fundo do botão */
+    color: var(--cor-fundo-claro-secundaria); /* Cor do texto do botão */
     font-size: 1rem; /* Tamanho da fonte */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
     font-size: 1.5rem;
+    min-width: 15rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 /* Adiciona efeito hover ao botão de pesquisa */
 section button:hover {
-    background-color: var(--cor-principal); /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
-    color: var(--cor-texto-secundaria); /* Cor do texto do botão */
+    background-color: var(--cor-fundo-claro-terciaria); /* Muda a cor de fundo ao passar o mouse */
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
+    color: var(--cor-fundo-claro-principal); /* Cor do texto do botão */
+}
+
+section button label {
+    padding-right: 1rem;
 }
 
 /* Estiliza a caixa de resultados da pesquisa */
@@ -113,7 +135,7 @@ section button:hover {
     height: 64vh; /* Altura máxima da caixa de resultados */
     overflow-y: auto; /* Adiciona rolagem vertical se necessário */
     border-radius: 0.6rem; /* Borda arredondada */
-    padding-right: 15px;
+    padding-right: 1rem;
 }
 
 /* Estiliza cada item de resultado */
@@ -124,10 +146,10 @@ section button:hover {
     border-radius: 0.6rem; /* Borda arredondada */
     padding: 1rem; /* Espaçamento interno */
     margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
-    box-shadow: 0 2px 4px rgb(var(--cor-principal), 50%, 80%);/* Sombra leve */
+    box-shadow: 0 0.2rem 0.5rem rgb(var(--cor-principal), 50%, 80%);/* Sombra leve */
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 1.5rem;
 }
 
@@ -145,9 +167,9 @@ section button:hover {
 
 .item-resultado h3 {
     font-size: 1.1rem; /* Tamanho da fonte */
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 6px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0.5rem;
 }
 
 /* Estiliza os links dentro dos itens de resultado */
@@ -171,10 +193,10 @@ section button:hover {
 
 .foto {
     opacity: 1; /* opacidade */
-    width: 150px;
-    height: 250px;
+    width: 25rem;
+    height: 40rem;
     object-fit: cover;
-    margin-right: 20px;
+    margin-right: 1.5rem;
 }
 
 .info {
@@ -196,30 +218,30 @@ section button:hover {
 }
 
 .info-meta button {
-    margin-right: 10px; /* Ajuste o espaçamento conforme necessário */
-    width: 60px;
-    height: 40px;
+    margin-right: 1rem; /* Ajuste o espaçamento conforme necessário */
+    width: 4rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;    
 }
 
 .info-meta button h4 {
-    margin-right: 5px; /* Ajuste o espaçamento conforme necessário */   
+    margin-right: 0.25rem; /* Ajuste o espaçamento conforme necessário */   
 }
 
 .info-meta button i {
-    margin-bottom: 4px; /* Ajuste o espaçamento conforme necessário */   
+    margin-bottom: 0.25rem; /* Ajuste o espaçamento conforme necessário */   
 }
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
     color: var(--cor-texto-principal); /* Cor do texto */
     margin: 0.5rem 0; /* Margem acima e abaixo */
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
 }
 
 .links a {
-    padding-left: 15px;
+    padding-left: 1rem;
     color: var(--cor-texto-secundaria);
 }
 
@@ -242,16 +264,16 @@ footer {
     position: absolute; /* Posiciona o rodapé */
     bottom: 0; /* Alinha ao fundo da página */
     font-size: 1rem; /* Tamanho da fonte */
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
 }
 
 #loader {
   display: none;
-  border: 16px solid var(--cor-fundo-claro-secundaria);
-  border-top: 16px solid var(--cor-texto-principal);
+  border: 1rem solid var(--cor-fundo-claro-secundaria);
+  border-top: 1rem solid var(--cor-texto-principal);
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 10rem;
+  height: 10rem;
   animation: spin 2s linear infinite;
 }
 
@@ -261,9 +283,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Estiliza os botões dentro das seções */
+    section button {
+        min-width: 20rem;
+    }
+
+    .botao-acao {
+        min-width: 4rem;
+    }
+
     h1 {
         font-size: 1.5rem; /* Tamanho da fonte em telas menores */
         letter-spacing: 0.2rem; /* Espaçamento entre letras em telas menores */
+    }
+
+    p {
+        font-size: 1rem;;
+    }
+
+    td {
+        font-size: 1rem;;
     }
 
     section input {
@@ -283,7 +322,7 @@ footer {
 
     .item-resultado h3 {
         margin: 0;
-    }    
+    }
 }
 
 /* Responsividade para celulares */

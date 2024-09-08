@@ -10,9 +10,9 @@
   </head>
   <body>
     <header></header>
-      <audio id="myAudio" src="audio/som.mp3"></audio>
+      <audio id="meu-audio" src="audio/som.mp3"></audio>
       <h1>A Taverna
-        <button id="playPauseButton" title="Tocar ou pausar o som de fundo">
+        <button id="botao-play-pause" title="Tocar ou pausar o som de fundo">
           <i class="fa-solid fa-play"></i>
         </button>
       </h1>
@@ -22,8 +22,11 @@
         <div id="loader"></div>
       </section>
       <section>
-        <input type="text-area" placeholder="Conte o ínicio da aventura! Ex.: Orcs atacam!" id="campo-pesquisa">
-        <button id="botao-pesquisa">Começar!</button>
+        <button id="botao-criar">Criar</button>
+        <button id="botao-usar">Comecar Pré-criado</button>
+        <input type="text-area" placeholder="Digite algo para pesquisar ou espaço para todas." id="campo-pesquisa">
+        <input type="text-area" placeholder="Conte o ínicio da aventura! Ex.: Orcs atacam!" id="campo-nova-historia">
+        <button id="botao-nova-historia">Começar!</button>
       </section>
       <section id="resultados-pesquisa" class="resultados-pesquisa">
       </section>
@@ -44,6 +47,7 @@
         </a>
       </div>
     </footer>
+    <script src="js/dados.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
