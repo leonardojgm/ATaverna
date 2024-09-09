@@ -70,7 +70,7 @@ function pesquisar() {
   };  
 
   if (!resultados) {
-    resultados =`<p>Nada foi encontrado</p>`
+    resultados =`<h1>Nada foi encontrado</h1>`
   }
 
   resultadosPesquisa.innerHTML = "";
@@ -250,7 +250,7 @@ async function consultarGemini(body) {
 
     await new Promise(resolve => setTimeout(resolve, 10000));
 
-    return atualizarResultado();
+    return consultarGemini(body);
   }
 }
 
@@ -273,7 +273,7 @@ async function atualizarResultado(texto) {
 
   resultadosPesquisa.appendChild(itemResultado);
 
-  if (!texto.includes("FIM DE JOGO")) {
+  if (!texto && !texto.includes("FIM DE JOGO")) {
     await exibirBotoesOpcoes()
   }
   else {    
