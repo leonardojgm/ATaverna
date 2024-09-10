@@ -273,7 +273,9 @@ async function atualizarResultado(texto) {
 
   resultadosPesquisa.appendChild(itemResultado);
 
-  if (!texto && !texto.includes("FIM DE JOGO")) {
+  console.log(texto);
+
+  if (texto && !texto.includes("FIM DE JOGO")) {
     await exibirBotoesOpcoes()
   }
   else {    
