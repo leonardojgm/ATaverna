@@ -2,8 +2,6 @@
 
 Um simulador de aventuras narrativas dinâmicas e supreendentes
 
-O projeto foi cirado para a Imersão da Alura + Gemini: https://discord.com/channels/1277631721822748742/1277631722716008535/1281576355170881608
-
 ![image](https://github.com/user-attachments/assets/f8beb36e-2a0d-40cc-ad59-6be321e1840c)
 
 Demo disponível em: https://ataverna.vercel.app/
