@@ -22,9 +22,8 @@ const dados = [
             <tr>
             <td><b>D)</b> Buscar refúgio em um local seguro e aguardar que a ameaça passe.</td>
             </tr>
-            </tbody></table>            
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b> Cada decisão moldará o destino da vila e a sua própria história nesta aventura épica!`,
+            </tbody></table>
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "orcs.jpg"
     },
     {
@@ -50,8 +49,7 @@ const dados = [
             <td><b>D)</b>️ Consultar uma cartomante local para obter uma visão sobre o paradeiro da princesa.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️            
-            <b>Lembre-se:</b>️ Cada decisão que vocês tomarem poderá aproximá-los ou afastá-los do seu objetivo. A sorte estará ao lado dos mais corajosos e astutos!`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "princesa.jpg"
     },
     {
@@ -77,8 +75,7 @@ const dados = [
             <td><b>D)</b>️ Interrogar os poucos moradores que parecem imunes à doença para descobrir algum segredo.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ O tempo é curto e a vida de muitas pessoas está em jogo. Cada decisão que vocês tomarem poderá aproximá-los ou afastá-los da cura.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "doenca.jpg"
     },
     {
@@ -104,8 +101,7 @@ const dados = [
             <td><b>D)</b>️ Ir diretamente ao palácio real para obter mais informações sobre o dragão e a recompensa.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ A batalha contra o dragão será épica, exigindo coragem, estratégia e um pouco de sorte. A escolha que você fizer agora determinará o seu destino!`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "dragao.jpg"
     },
     {
@@ -130,8 +126,7 @@ const dados = [
             <td><b>D)</b>️ Infiltrar-se em um dos becos mais perigosos da cidade para tentar encontrar pistas.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ O assassino está à solta e a cada dia que passa, a cidade se torna mais perigosa. Cada pista, por menor que seja, pode ser a chave para desvendar esse mistério.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "assassino.jpg"
     },
     {
@@ -156,8 +151,7 @@ const dados = [
             <td><b>D)</b>️ Seguir Ana discretamente e tentar descobrir mais sobre seus hábitos e seus segredos.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ A história de Ana pode ser mais profunda do que parece. Cada pista pode revelar um novo mistério e aproximá-los da verdade.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "branca.jpg"
     },
     {
@@ -182,8 +176,7 @@ const dados = [
             <td><b>D)</b>️ Investigar a origem do conflito para descobrir as verdadeiras razões por trás da guerra.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ A guerra é um jogo perigoso, e cada decisão que vocês tomarem poderá ter consequências imprevisíveis. A paz pode estar mais próxima do que imaginam, mas o caminho será árduo e cheio de desafios.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "politica.jpg"
     },
     {
@@ -208,34 +201,32 @@ const dados = [
             <td><b>D)</b>️ Reunir um grupo de mercadores honestos para formar uma resistência contra o Rei Rato.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ O Rei Rato é um adversário poderoso e astuto, mas com coragem e estratégia, vocês podem derrotá-lo e libertar o mundo do comércio de sua tirania.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "mouse.jpg"
     },
     {
-        'prompt': "Um grupo de nobres combatentes da arte digitais enfrenta uma imersão para aprender com Alura e Gemini",
+        'prompt': "Um grupo de nobres combatentes da arte digitais enfrenta um virus de computador",
         'inicio': `<h1>O Labirinto Digital</h1>
             <b>Uma Jornada de Aprendizagem</b>️
-            Um grupo de nobres guerreiros digitais, hábeis em manusear códigos e algoritmos como espadas, embarca em uma jornada épica. Seu destino? Um mundo digital místico, governado pelas poderosas entidades Alura e Gemini. A lenda diz que quem conseguir superar os desafios propostos por essas entidades, emergirá como um verdadeiro mestre da arte digital.
-            <b>Seu objetivo é claro:</b>️ Dominar as habilidades de Alura e Gemini e se tornar um campeão da era digital.
+            Um grupo de nobres guerreiros digitais, hábeis em manusear códigos e algoritmos como espadas, embarca em uma jornada épica. Seu destino? Um mundo digital místico, governado pelas poderosas entidades digitais. A lenda diz que quem conseguir superar os desafios propostos por essas entidades, emergirá como um verdadeiro mestre da arte digital.
+            <b>Seu objetivo é claro:</b>️ Dominar as habilidades de digitais e se tornar um campeão da era digital.
             Vocês se encontram em um espaço de coworking futurista, um lugar onde a criatividade e a inovação se encontram. O ambiente é vibrante, com telas gigantes exibindo códigos em constante mutação e estações de trabalho equipadas com a mais alta tecnologia. A conversa, normalmente animada, agora é marcada por uma expectativa crescente, pois a imersão digital está prestes a começar.
             <table>
             <tbody>
             <tr>
-            <td><b>A)</b>️ Mergulhar diretamente no mundo digital de Alura, explorando seus domínios de programação e desenvolvimento web.</td>
+            <td><b>A)</b>️ Mergulhar diretamente no mundo digital, explorando seus domínios de programação e desenvolvimento web.</td>
             </tr>
             <tr>
-            <td><b>B)</b>️ Buscar a sabedoria de Gemini, aprofundando-se nos mistérios da inteligência artificial e aprendizado de máquina.</td>
+            <td><b>B)</b>️ Buscar a sabedoria de um mestre, aprofundando-se nos mistérios da inteligência artificial e aprendizado de máquina.</td>
             </tr>
             <tr>
-            <td><b>C)</b>️ Explorar a biblioteca digital, buscando conhecimentos sobre as lendas de Alura e Gemini e os desafios que os aguardam.</td>
+            <td><b>C)</b>️ Explorar a biblioteca digital, buscando conhecimentos sobre as lendas digitais e os desafios que os aguardam.</td>
             </tr>
             <tr>
             <td><b>D)</b>️ Interagir com outros guerreiros digitais, compartilhando experiências e estratégias para a imersão.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ O mundo digital é vasto e cheio de perigos. Cada decisão que vocês tomarem moldará o destino de seus personagens.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "imersao.jpg"
     },
     {
@@ -260,8 +251,7 @@ const dados = [
             <td><b>D)</b>️ Investigar os rumores sobre uma antiga profecia que diz que o vencedor dos Jogos será o futuro rei.</td>
             </tr>
             </tbody></table>
-            <b>Qual será sua próxima ação?</b>️
-            <b>Lembre-se:</b>️ Os Jogos da Cidade são uma oportunidade única para mostrar suas habilidades e alcançar a glória. Mas cuidado, a competição será acirrada e os desafios, muitos.`,
+            <b>Qual será sua próxima ação?</b>️`,
         'foto': "olimpiada.jpg"
     },
     {
