@@ -19,7 +19,7 @@ const dados = [
             <tr>
             <td><b>D)</b> Buscar refúgio em um local seguro e aguardar que a ameaça passe.</td>
             </tr>
-            </tbody></table>>️`,
+            </tbody></table>`,
         'foto': "orcs.jpg"
     },
     {
