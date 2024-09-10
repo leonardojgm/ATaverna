@@ -186,6 +186,7 @@ async function avancarHistoria(resposta) {
     Continue a história do ponto onde parou: 
     "${historia}".
     O usuario escolheu a opção ${resposta}.
+    Você não deve repetir a história até o momento, deve apenas informar a continuação.
     A resposta tem que vir formatada para HTML.
     Não utilize Markdown.
     Pode usar emoticons.
@@ -278,7 +279,7 @@ async function atualizarResultado(texto) {
   if (texto && !texto.includes("FIM DE JOGO")) {
     await exibirBotoesOpcoes()
   }
-  else {    
+  else {
     await exibirBotaoReiniciar()
   }
 }
