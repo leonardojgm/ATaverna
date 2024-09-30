@@ -61,3 +61,14 @@ Algumas coisas que o Gemini me ajudou a implantar:
 ![image](https://github.com/user-attachments/assets/279690bd-4454-491e-90e6-e63d0286f42e)
 
 3 - API Gemini
+
+Ideia:
+
+Aventura de rpg com seleção 
+
+	- Solicitar um cenário
+	- Validar se é possível usar a aventura ou se precisa de mais informações
+	- Solicitar o nome do personagem e descrição se desejar
+	- Introduzir a aventura com um objetivo
+	- Exibir 4 opções
+	- Processar e verificar se o objetivo foi cumprido, se não exibir novas 4 opções
